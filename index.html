@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>静态资源预先加载</title>
+</head>
+<body>
+	<div id="preLoadingStaticResource">
+		loading******
+
+		<!--1、配置静态资源文件路径， 绝对或者相对-->
+		loading.conf({
+			baseUrl: '/static',    // 静态资源目录
+			animation: 'loading',    // 加载动画样式。可使用自定义过场动画
+			complete: function(){}    // 所有资源加载完执行动画
+		});
+		<!--2、支持常见静态资源['.jgp', '.jpeg', '.png', '.gif']-->
+		<!--3、加载loading显示方式可配置-->
+		{
+			type: 'image',    // 默认image。 type为image时，为图片资源；其他：mp3 mp4 html css js
+			url: '',    // 相对路径。和配置文件里面合成
+			complete: function(){}    // 该资源加载完成执行回调。
+		}
+		<!--5、所有资源加载完成执行回调函数-->
+
+		<!--后期扩展： 加载mp3、mp4文件。甚至可以加载html、css、js文件-->
+	</div>
+</body>
+</html>
